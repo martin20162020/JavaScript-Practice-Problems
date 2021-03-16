@@ -2,24 +2,24 @@
 longestWord = word =>{
     let sentence = word.split(' ');
     let longWord = 0;
+    let theLongestWord = null;
     for (let i = 0; i < sentence.length; i++){
-        if(sentence.length > longWord){
+        if(longWord < sentence[i].length){
         longWord = sentence[i].length;
+        theLongestWord = sentence[i];
         }
     }
-    return longWord;
+    return theLongestWord;
 }
 
-let practiceProblemOne ="The dog ran into the park, and then went home";
-
-console.log(longestWord(practiceProblemOne))
+console.log(longestWord("Trying to find the longest word"))
 
 
 //Problem 2
 vowelCount = word =>{
-    let newWord = word.split("");
+    let newWord = word.toLowerCase().split("");
     let countingVowels = 0;
-    let vowelsList = 'aeiouAEIOU';
+    let vowelsList = 'aeiou';
     for(let i = 0; i < newWord.length; i++){
         if (vowelsList.indexOf(newWord[i]) !== -1){
             countingVowels ++;
@@ -28,9 +28,7 @@ vowelCount = word =>{
     return countingVowels;
 }
 
-let examples = "Let's find all of the vowels."
-
-console.log(vowelCount(examples))
+console.log(vowelCount("Finds All Of The Vowels."))
 
 
 //Problem 3
@@ -49,8 +47,8 @@ console.log(findingTheLetter("Every letter in this sentence", "e"))
 
 //Problem 4
 isItPrime = number =>{
-    if (number === 1){
-        return `${number} IS a prime number`;
+    if (number === 1 || number === 0){
+        return `${number} is NOT prime number`;
     } else if (number === 2){
         return `${number} IS a prime number`;
     } else{
@@ -63,7 +61,7 @@ isItPrime = number =>{
     return `${number} IS a prime number`;
 }
 
-console.log(isItPrime(23))
+console.log(isItPrime(0))
 
 
 //Problem 5
@@ -81,18 +79,19 @@ console.log(isItAPalindrome("racecar"))
 
 //Problem 6
 fizzBuzz = () => {
+    let word = "";
     for (let i = 1; i <= 100; i++){
         if (i % 3 === 0 && i % 5 === 0){
-            console.log("FizzBuzz");
+            word += " FizzBuzz ";
         } else if (i % 3 === 0){
-            console.log("Fizz");
+            word += " Fizz ";
         } else if (i % 5 === 0){
-            console.log("Buzz");
+            word += " Buzz ";
         } else {
             console.log(i);
         }
     }
-    return "End of game"
+    return word
 }
 
 console.log(fizzBuzz())
