@@ -1,18 +1,17 @@
 //Problem 1
 longestWord = word =>{
     let sentence = word.split(' ');
-    let longWord = 0;
-    let theLongestWord = null;
+    let longWord = null;
     for (let i = 0; i < sentence.length; i++){
         if(longWord < sentence[i].length){
-        longWord = sentence[i].length;
-        theLongestWord = sentence[i];
+        longWord = sentence[i];
         }
     }
-    return theLongestWord;
+    return longWord;
 }
 
 console.log(longestWord("Trying to find the longest word"))
+console.log(longestWord("Testing another word"))
 
 
 //Problem 2
@@ -81,12 +80,10 @@ console.log(isItAPalindrome("racecar"))
 fizzBuzz = () => {
     let word = "";
     for (let i = 1; i <= 100; i++){
-        if (i % 3 === 0 && i % 5 === 0){
-            word += " FizzBuzz ";
-        } else if (i % 3 === 0){
-            word += " Fizz ";
+        if (i % 3 === 0){
+            word += "Fizz";
         } else if (i % 5 === 0){
-            word += " Buzz ";
+            word += "Buzz";
         } else {
             console.log(i);
         }
