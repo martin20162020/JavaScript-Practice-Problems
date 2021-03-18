@@ -1,17 +1,17 @@
 //Problem 1
 longestWord = word =>{
     let sentence = word.split(' ');
-    let longWord = null;
+    let longWord = "";
     for (let i = 0; i < sentence.length; i++){
-        if(longWord < sentence[i].length){
+        if(longWord.length < sentence[i].length){
         longWord = sentence[i];
         }
     }
     return longWord;
 }
 
-console.log(longestWord("Trying to find the longest word"))
-console.log(longestWord("Testing another word"))
+console.log(longestWord("Try to find the longest word"))
+console.log(longestWord("Testing to see if this function is working and returning the longest word"))
 
 
 //Problem 2
