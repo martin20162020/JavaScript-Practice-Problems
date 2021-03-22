@@ -10,6 +10,9 @@ longestWord = word =>{
     return longWord;
 }
 
+let words = "Try to find the longest word"
+
+
 console.log(longestWord("Try to find the longest word"))
 console.log(longestWord("Testing to see if this function is working and returning the longest word"))
 
