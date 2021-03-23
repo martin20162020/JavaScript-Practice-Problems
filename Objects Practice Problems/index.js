@@ -35,7 +35,7 @@ const truck = {
     model: "F-150 King Ranch"
 }
 
-const objectLength = () => Object.keys(truck.model).length
+const objectLength = () => Object.keys(truck).length
 
 console.log(objectLength())
 
