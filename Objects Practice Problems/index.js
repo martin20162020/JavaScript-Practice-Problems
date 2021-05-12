@@ -11,21 +11,35 @@ deletingProperty = () => {
     return car;
 }
 
-console.log(deletingProperty());
+// console.log(deletingProperty());
 
+//Newer Solution Module-Reviewed
+deletingProperty = object => {
+    return delete object.model, object;
+}
+
+console.log(`problem 1`, deletingProperty(car));
 
 //Problem 2
-let people = [
+const people = [
     {firstName: "John", lastName: "Smith", age: 24},
     {firstName: "Matt", lastName: "Anderson", age: 23},
     {firstName: "Victoria", lastName: "Martin", age: 22},
-    {firstName: "Emily", lastName: "Flinch", age: 22},
+    {firstName: "Emily", lastName: "Flinch", age: 22}
 ]
 
-people.forEach(person => {
-    console.log(`${person.firstName} ${person.lastName}`);
-})
+// people.forEach(person => {
+//     console.log(`${person.firstName} ${person.lastName}`);
+// })
 
+//Newer Solution Module-Reviewed
+displayingNames = object => {
+    object.forEach((person) =>{
+        console.log(person.firstName, person.lastName);
+    })
+ }
+
+displayingNames(people);
 
 //Problem 3
 const truck = {
@@ -33,11 +47,17 @@ const truck = {
     color: "Red",
     year: "2017",
     model: "F-150 King Ranch"
-}
+};
 
-const objectLength = () => Object.keys(truck).length
+const objectLength = () => Object.keys(truck).length;
+// console.log(objectLength())
 
-console.log(objectLength())
+
+//Newer Solution Module-Reviewed
+findObjectsLength = object => Object.keys(object).length;
+
+console.log(findObjectsLength(truck));
+
 
 
 //Problem 4
@@ -47,9 +67,9 @@ const candy = {
     calories: 260
 }
 
-const candyKey = (key, object) => key in object
+const candyKey = (key, object) => key in object;
 
-console.log(candyKey("name", (candy)))
+console.log(candyKey("name", (candy)));
 
 
 //Problem 5
@@ -57,17 +77,17 @@ const bookArray = [
     {author: "Bill Gates", title: "The Road Ahead", libraryID: 1254},
     {author: "Steve Jobs", title: "Walter Isaacson", libraryID: 4264},
     {author: "Suzanne Collins", title: "Mockingjay: THe Final Book of the Hunger Games", libraryID: 3245}
-]
+];
 
 bookArray.sort(function (a, b){
     if (a.title.toLowerCase() < b.title.toLowerCase()){
-        return -1
+        return -1;
     } else if (a.title.toLowerCase() > b.title.toLowerCase()){
-        return 1
+        return 1;
     } else{
-        return 0
+        return 0;
     }
 })
 
-console.log(bookArray)
+console.log(bookArray);
 
